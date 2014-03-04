@@ -3,7 +3,8 @@ module ApplicationHelper
     a.local_start_time.strftime("%m/%d/%Y") +
     " from " + a.local_start_time.strftime("%I:%M%P") +
     " to " + a.local_end_time.strftime("%I:%M%P ") + a.timezone +
-    " at " + (a.location.blank? ? "Dev Bootcamp" : a.location)
+    " at " + (a.location.blank? ? "Dev Bootcamp" : a.location) +
+    (a.city.nil? ? "" : " in #{a.city}.")
   end
 
   def display_appointment(a)

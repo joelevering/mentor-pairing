@@ -1,7 +1,7 @@
 class AvailabilitiesController < ApplicationController
 
   def new
-    @availability = Availability.new(:location => "Dev Bootcamp")
+    @availability = Availability.new(location: "Dev Bootcamp", duration: 60)
   end
 
   def create
@@ -29,7 +29,7 @@ class AvailabilitiesController < ApplicationController
   private
 
   def availability_params
-    params.require(:availability).permit('start_time(1s)', 'start_time(4i)', 'start_time(5i)', :start_time, :duration, :timezone, :location)
+    params.require(:availability).permit('start_time(1s)', 'start_time(4i)', 'start_time(5i)', :start_time, :duration, :timezone, :location, :city)
   end
 
   def format_start_time(time_params)

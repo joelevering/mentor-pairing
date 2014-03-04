@@ -1,6 +1,8 @@
 class Availability < ActiveRecord::Base
   include LocaltimeAdjustment
 
+  CITY_OPTIONS = ["Chicago", "San Francisco", "New York"]
+
   attr_accessor :duration
 
   belongs_to :mentor, :class_name => "User"
